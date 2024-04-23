@@ -16,10 +16,15 @@ def measure_time(n: int, max_delay: int) -> float:
         return: float
     """
     start_time = time.time()
+    formatted_time_start = time.ctime(start_time)
+    print(formatted_time_start)
 
-    asyncio.run(wait_n(n, max_delay))
+    result = asyncio.run(wait_n(n, max_delay))
+    print(result)
 
     end_time = time.time()
+    formatted_time_end = time.ctime(end_time)
+    print(formatted_time_end)
 
     total_time = end_time - start_time
     average_time_per_call = total_time / n
