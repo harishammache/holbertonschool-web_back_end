@@ -6,6 +6,7 @@ import asyncio
 import random
 
 
+
 async def async_generator():
     """
         Coroutine that generates random numbers asynchronously.
