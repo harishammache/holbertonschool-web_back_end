@@ -3,4 +3,5 @@
 python-variable_annotations
 python_async_function
 NoSQL      
-ES6 Basics                           
+ES6 Basics    
+ES6 classes                       
