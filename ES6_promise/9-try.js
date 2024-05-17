@@ -1,4 +1,4 @@
-function guardrail (mathFunction) {
+function guardrail(mathFunction) {
   const queue = [];
   try {
     // Attempt to execute the mathFunction and push the result to the queue
