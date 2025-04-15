@@ -10,7 +10,7 @@ class LIFOCache(BaseCaching):
         """call the parent init"""
         super().__init__()
         self.key_save = []
-    
+
     def put(self, key, item):
         """Add an item in the cache using FIFO replacement policy."""
         if key is None or item is None:
@@ -27,5 +27,3 @@ class LIFOCache(BaseCaching):
         if key is None or key not in self.cache_data:
             return None
         return self.cache_data.get(key)
-    
-        
