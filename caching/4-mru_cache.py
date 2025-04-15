@@ -19,7 +19,7 @@ class MRUCache(BaseCaching):
             return
         if key in self.key_save:
             self.key_save.remove(key)
-        if self.cache_data >= BaseCaching.MAX_ITEMS:
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             most_recently = self.key_save.pop()
             del self.cache_data[most_recently]
             print(f"DISCARD: {most_recently}")
@@ -28,10 +28,10 @@ class MRUCache(BaseCaching):
 
     def get(self, key):
         """Retrieve an item by key and update its usage"""
-        if key is None or key in self.cache_data:
+        if key is None or key not in self.cache_data:
             return None
 
         self.key_save.remove(key)
         self.key_save.append(key)
 
-        return self.cache_data[key]
+        return self.cache_data.get(key)
