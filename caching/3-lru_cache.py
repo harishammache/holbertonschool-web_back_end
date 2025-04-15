@@ -21,7 +21,7 @@ class LRUCache(BaseCaching):
         if key in self.key_save:
             self.key_save.remove(key)
 
-        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             last_key = self.key_save.pop(0)
             del self.cache_data[last_key]
             print(f"DISCARD: {last_key}")
