@@ -8,4 +8,3 @@ from api.v1.auth.auth import Auth
 
 class BasicAuth(Auth):
     """create a classe that inherits from Auth"""
-    
