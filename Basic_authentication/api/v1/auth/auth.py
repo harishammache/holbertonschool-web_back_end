@@ -37,3 +37,5 @@ class Auth:
     def current_user(self, request=None) -> TypeVar('User'):
         """public method"""
         return None
+
+    
