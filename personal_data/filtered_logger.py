@@ -23,10 +23,9 @@ def filter_datum(fields, redaction, message, separator):
         - separator: a string representing by which character is separating
         all fields in the log line
     """
-    for field in fields:
-        pattern = fr'{field}=.*?(?={separator})'
-        message = re.sub(pattern, f'{field}={redaction}', message)
-    return message
+    pattern = r'(' + '|'.join(fields) + r')=.*?' + re.escape(separator)
+    return re.sub(pattern, lambda m: f"{m.group(1)}={redaction}{separator}",
+                  message)
 
 
 class RedactingFormatter(logging.Formatter):
