@@ -20,22 +20,22 @@ def session_login() -> str:
 
     if not email:
         return jsonify({"error": "email missing"}), 400
-    
+
     if not password:
         return jsonify({"error": "password missing"}), 400
-    
+
     users = User.search({'email': email})
     if not users:
-        return jsonify({"error": "no user found for this email"})
+        return jsonify({"error": "no user found for this email"}), 404
     user = users[0]
 
     if not user.is_valid_password(password):
         return jsonify({"error": "wrong password"}), 401
-    
+
     from api.v1.app import auth
     session_id = auth.create_session(user.id)
     response = make_response(jsonify(user.to_json()))
     session_name = os.getenv('SESSION_NAME')
-    response.ser_cookie(session_name, session_id)
+    response.set_cookie(session_name, session_id)
 
     return response
