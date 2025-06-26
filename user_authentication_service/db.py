@@ -43,12 +43,12 @@ class DB:
             for key in kwargs.keys():
                 if not hasattr(User, key):
                     raise InvalidRequestError(f"Invalid attribute: {key}")
-        
+
             user = self._session.query(User).filter_by(**kwargs).one()
             return user
-    
+
         except AttributeError:
             raise InvalidRequestError("Invalid query arguments")
-    
+
         except NoResultFound:
             raise NoResultFound("No user found")
