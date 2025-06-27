@@ -46,7 +46,7 @@ def login() -> str:
     return response
 
 
-@app.route('/session', methods=['DELETE'])
+@app.route('/sessions', methods=['DELETE'])
 def logout() -> str:
     """
         DELETE /sessions endpoint to logout a user
@@ -59,7 +59,7 @@ def logout() -> str:
 
     AUTH.destroy_session(user.id)
 
-    return redirect("/")
+    return redirect("/"), 302
 
 
 @app.route('/profile', methods=['GET'])
@@ -72,7 +72,7 @@ def profile() -> str:
 
     if user is None:
         abort(403)
-    return jsonify({"email": user.email})
+    return jsonify({"email": user.email}), 200
 
 
 if __name__ == "__main__":
