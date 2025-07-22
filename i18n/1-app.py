@@ -20,6 +20,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 babel.init_app(app)
 
+
 @app.route('/')
 def index() -> str:
     """Renders the home page with a welcome message."""
