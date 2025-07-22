@@ -2,24 +2,9 @@
 """Basic Flask app with a single route."""
 
 
-from flask_babel import Babel
 from flask import Flask, render_template
 
 app = Flask(__name__)
-
-
-babel = Babel()
-
-
-class Config():
-    """that has a LANGUAGES class attribute"""
-    LANGUAGES = ["en", "fr"]
-    BABEL_DEFAULT_LOCALE = "en"
-    BABEL_DEFAULT_TIMEZONE = "UTC"
-
-
-app.config.from_object(Config)
-babel.init_app(app)
 
 
 @app.route('/')
