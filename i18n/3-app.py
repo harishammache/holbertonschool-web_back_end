@@ -31,7 +31,7 @@ babel.init_app(app, locale_selector=get_locale)
 @app.route('/')
 def index() -> str:
     """Renders the home page with a welcome message."""
-    return render_template('3-index.html')
+    return render_template('3-index.html', get_locale=get_locale)
 
 
 if __name__ == '__main__':
