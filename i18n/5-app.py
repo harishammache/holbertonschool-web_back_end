@@ -34,7 +34,7 @@ babel.init_app(app, locale_selector=get_locale)
 @app.route('/')
 def index() -> str:
     """Renders the home page with a welcome message."""
-    return render_template('3-index.html', get_locale=get_locale)
+    return render_template('5-index.html', get_locale=get_locale)
 
 users = {
     1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
