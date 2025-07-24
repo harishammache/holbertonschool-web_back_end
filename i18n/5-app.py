@@ -36,12 +36,14 @@ def index() -> str:
     """Renders the home page with a welcome message."""
     return render_template('5-index.html', get_locale=get_locale)
 
+
 users = {
     1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
     2: {"name": "Beyonce", "locale": "en", "timezone": "US/Central"},
     3: {"name": "Spock", "locale": "kg", "timezone": "Vulcan"},
     4: {"name": "Teletubby", "locale": None, "timezone": "Europe/London"},
 }
+
 
 def get_user():
     """methode get_user"""
@@ -50,10 +52,12 @@ def get_user():
         return users.get(int(user_id))
     return None
 
+
 @app.before_request
 def before_request():
     """methode before"""
     g.user = get_user()
+
 
 if __name__ == '__main__':
     app.run()
