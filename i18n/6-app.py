@@ -37,7 +37,7 @@ def get_locale():
 @app.route('/')
 def index() -> str:
     """Renders the home page with a welcome message."""
-    return render_template('5-index.html', get_locale=get_locale)
+    return render_template('6-index.html', get_locale=get_locale)
 
 
 users = {
