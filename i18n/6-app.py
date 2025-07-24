@@ -22,7 +22,7 @@ babel = Babel(app)
 
 
 def get_locale():
-    '''mathode get'''
+    """mathode get"""
     locale = request.args.get('locale')
     if locale in app.config['LANGUAGES']:
         return locale
