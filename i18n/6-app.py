@@ -2,7 +2,7 @@
 """Basic Flask app with a single route."""
 
 
-from flask_babel import Babel
+from flask_babel import Babel, _
 from flask import Flask, render_template, request, g
 
 
@@ -18,6 +18,7 @@ class Config():
 
 app = Flask(__name__)
 app.config.from_object(Config)
+babel = Babel(app)
 
 
 def get_locale():
@@ -37,7 +38,7 @@ def get_locale():
 @app.route('/')
 def index() -> str:
     """Renders the home page with a welcome message."""
-    return render_template('6-index.html', get_locale=get_locale)
+    return render_template('6-index.html', get_locale=get_locale,  _=_)
 
 
 users = {
