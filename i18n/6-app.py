@@ -4,8 +4,6 @@
 
 from flask_babel import Babel, _
 from flask import Flask, render_template, request, g
-import pytz
-from pytz.exceptions import UnknownTimeZoneError
 
 
 babel = Babel()
@@ -40,7 +38,7 @@ def get_locale():
 @app.route('/')
 def index() -> str:
     """Renders the home page with a welcome message."""
-    return render_template('7-index.html', get_locale=get_locale,  _=_)
+    return render_template('6-index.html', get_locale=get_locale,  _=_)
 
 
 users = {
@@ -63,30 +61,6 @@ def get_user():
 def before_request():
     """methode before"""
     g.user = get_user()
-
-
-def get_timezone():
-    """methode get"""
-    tz = request.args.get('timezone')
-    if tz:
-        try:
-            pytz.timezone(tz)
-            return tz
-        except UnknownTimeZoneError:
-            pass
-
-    if g.get('user'):
-        user_tz = g.user.get('timezone')
-        if user_tz:
-            try:
-                pytz.timezone(user_tz)
-                return user_tz
-            except UnknownTimeZoneError:
-                pass
-
-    return 'UTC'
-
-babel.init_app(app, timezone_selector=get_timezone)
 
 
 if __name__ == '__main__':
