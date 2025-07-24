@@ -44,6 +44,7 @@ users = {
 }
 
 def get_user():
+    """methode get_user"""
     user_id = request.args.get('login_as')
     if user_id and user_id.isdigit():
         return users.get(int(user_id))
@@ -51,6 +52,7 @@ def get_user():
 
 @app.before_request
 def before_request():
+    """methode before"""
     g.user = get_user()
 
 if __name__ == '__main__':
