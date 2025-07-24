@@ -86,6 +86,7 @@ def get_timezone():
 
     return 'UTC'
 
+
 babel.init_app(app, timezone_selector=get_timezone)
 
 
