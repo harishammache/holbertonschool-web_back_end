@@ -42,3 +42,7 @@ caching/3-main.py
 caching/4-main.py
 personal_data/main.py
 personal_data/__pycache__/filtered_logger.cpython-310.pyc
+user_authentication_service/__pycache__/user.cpython-310.pyc
+*.pyc
+*.db
+*main.py
