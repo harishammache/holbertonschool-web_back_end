@@ -3,12 +3,12 @@ const calculateNumber = require('./1-calcul');
 
 describe('calculateNumber', () => {
     describe('SUM', () => {
-        it('result of two positiv number 1.4 + 3.5 should return 5', () => {
-            assert.strictEqual(calculateNumber('SUM', 1.4, 4.5), 5)
+        it('result of two positiv number 1.4 + 3.5 should return 6', () => {
+            assert.strictEqual(calculateNumber('SUM', 1.4, 4.5), 6)
         });
 
-        it('result of two negativ number -1.4 + -3.5 should return -5', () => {
-            assert.strictEqual(calculateNumber('SUM', -1.4, -4.5), -5)
+        it('result of two negativ number -1.4 + -3.5 should return -6', () => {
+            assert.strictEqual(calculateNumber('SUM', -1.4, -4.5), -6)
         })
     })
 
