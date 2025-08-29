@@ -14,11 +14,11 @@ describe('calculateNumber', () => {
 
     describe('SUBTRACT', () =>{
         it('result of two positiv number 4 - 2 should return 2', () => {
-            assert.strictEqual(calculateNumber('SUBSTRACT', 4, 2), 2)
+            assert.strictEqual(calculateNumber('SUBTRACT', 4, 2), 2)
         })
 
         it('result of two negativ number (-3) - (-5) should return 2', () => {
-            assert.strictEqual(calculateNumber('SUBSTRACT', -3, -5), 2)
+            assert.strictEqual(calculateNumber('SUBTRACT', -3, -5), 2)
         })
     })
 
