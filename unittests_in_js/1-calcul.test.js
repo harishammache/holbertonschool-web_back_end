@@ -7,12 +7,12 @@ describe('calculateNumber', () => {
             assert.strictEqual(calculateNumber('SUM', 1.4, 4.5), 6)
         });
 
-        it('result of two negativ number -1.4 + -3.5 should return -6', () => {
-            assert.strictEqual(calculateNumber('SUM', -1.4, -4.5), -6)
+        it('result of two negativ number -1.4 + -3.5 should return -5', () => {
+            assert.strictEqual(calculateNumber('SUM', -1.4, -4.5), -5)
         })
     })
 
-    describe('SUBSTRACT', () =>{
+    describe('SUBTRACT', () =>{
         it('result of two positiv number 4 - 2 should return 2', () => {
             assert.strictEqual(calculateNumber('SUBSTRACT', 4, 2), 2)
         })
@@ -32,7 +32,7 @@ describe('calculateNumber', () => {
         })
 
         it('result if b = 0 should return Error', () => {
-            assert.strictEqual(calculateNumber('DIVIDE', 4, 0), 'ERROR')
+            assert.strictEqual(calculateNumber('DIVIDE', 4, 0), 'Error')
         })
     })
 })
