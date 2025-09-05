@@ -1,7 +1,6 @@
 {
   "name": "unittests_in_js",
   "version": "1.0.0",
-  "type": "module",
   "description": "<h1 align=\"center\">🧪 Unit Tests in JS - Tests automatisés avec Mocha, Chai & Sinon</h1>",
   "main": "0-calcul.js",
   "scripts": {
@@ -11,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^6.0.1",
+    "chai": "^4.5.0",
     "mocha": "^11.7.1"
   }
 }
