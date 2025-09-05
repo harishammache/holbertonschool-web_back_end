@@ -27,6 +27,10 @@ app.post('/login', (req, res) => {
   res.send(`Welcome ${userName}`);
 });
 
+app.use((req, res) => {
+  res.status(404).send('Not Found');
+});
+
 app.listen(port, () => {
   console.log(`API available on localhost port ${port}`);
 });
